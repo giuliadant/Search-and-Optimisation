@@ -15,7 +15,8 @@ def deriv_f(x):
 #gradient descent
 x_i=3 #starting point; actual minimum is 2 (found manually)
 alpha = 0.1 #step size
-N = 20 #iterations
+N = 30 #iterations
+epsilon = 0.02
 descent_x = [] #for superimposing
 descent_y = []
 
@@ -23,6 +24,9 @@ for i in range (N):
     descent_x.append(x_i)
     descent_y.append(f(x_i))
     d = -deriv_f(x_i) #negative gradient
+    if abs(d) < epsilon:
+        print(f"Converged after {i} steps")
+        break
     x_i = x_i + alpha * d #update position
     print(f"Step {i}: x = {x_i}, f(x) = {f(x_i)}")
 
