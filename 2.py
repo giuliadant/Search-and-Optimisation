@@ -8,25 +8,28 @@ def f(x):
 x = np.linspace(0.0,4.0,100)
 y=f(x)
 
-print(y)
-
-plt.plot(x,y,label='function')
-plt.savefig("plot.png")
-plt.show()
-
 #derivative found manually
 def deriv_f(x):
     return 2*x - 4
 
 #gradient descent
-x=1 #starting point; actual minimum is 2 (found manually)
+x_i=3 #starting point; actual minimum is 2 (found manually)
 alpha = 0.1 #step size
 N = 20 #iterations
+descent_x = [] #for superimposing
+descent_y = []
 
 for i in range (N):
-    d = -deriv_f(x) #negative gradient
-    x = x + alpha * d #update position
-    print(f"Step {i}: x = {x}, f(x) = {f(x)}")
+    descent_x.append(x_i)
+    descent_y.append(f(x_i))
+    d = -deriv_f(x_i) #negative gradient
+    x_i = x_i + alpha * d #update position
+    print(f"Step {i}: x = {x_i}, f(x) = {f(x_i)}")
 
 
 #print(f"Minimum at x ={x},f(x)={f(x)}") shows final result after loop
+
+#superimpose i.e plot gradient descent steps on top of original function
+plt.plot(x,y,label='function')
+plt.plot(descent_x,descent_y, 'ro-')
+plt.show()
