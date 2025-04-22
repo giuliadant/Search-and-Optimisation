@@ -20,7 +20,7 @@ for run in range(100):
     for i in range (N):
         x_new = np.random.uniform(-10,10,2)
         f_new =Griewangk(x_new)
-        all_Gx[run, i] = f_new
+        all_Gx[run, i] = f_min
 
         if f_new < f_min:
             x_best = x_new
