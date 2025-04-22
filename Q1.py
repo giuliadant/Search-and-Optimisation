@@ -12,7 +12,7 @@ def part_dev_G(x):
     dy = ((2 * x[1]) / 4000 + const * np.cos(x[0]) * np.sin(const * x[1]))
     return np.array([dx, dy])
 
-N = 100
+N = 15
 all_Gx = np.zeros((100,N))
 final_values = []
 
