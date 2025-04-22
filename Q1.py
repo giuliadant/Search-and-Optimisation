@@ -18,7 +18,9 @@ final_values = []
 
 for run in range(100):
     # gradient descent
-    x_i = np.random.uniform(-10,10,size=2)
+    x1 = np.random.uniform(-10, 10)
+    x2 = np.random.uniform(-10, 10)
+    x_i = ([x1, x2])
     alpha = 0.3
     epsilon = 0.01
     for i in range(N):
