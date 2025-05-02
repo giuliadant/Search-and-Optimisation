@@ -31,7 +31,7 @@ for i in range (N):
     print(f"Step {i}: x = {x_i}, f(x) = {f(x_i)}")
 
 
-#print(f"Minimum at x ={x},f(x)={f(x)}") shows final result after loop
+#print(f"Minimum at x ={x_i},f(x)={f(x_i)}") shows final result after loop
 
 #superimpose i.e plot gradient descent steps on top of original function
 plt.plot(x,y,label='function')
